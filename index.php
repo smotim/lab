@@ -12,6 +12,7 @@
 </header>
 <main>
 <dl>
+    <p>Если еще не смотрели текстовую часть отчета, скачать docx-файл можно <a href="Отчет по PHP 1.docx" download>здесь</a> (он лежит в папке с сайтом)</p>
     <h3>Элементы языка. Типы</h3>
     <dt>Вывод простой строки</dt>
         <dd><code>&lt;?php echo('Hello world!'); ?&gt;</code></dd>
@@ -177,7 +178,7 @@
                 print_r($flipped);
                 ?>
             </pre></i></dd>
-    <dt>Массив array наполнен случайными занечениями. Попробуем найти максимальное и минимальное значение и поменять их местами:</dt>
+    <dt>Массив array наполнен случайными значениями. Попробуем найти максимальное и минимальное значение и поменять их местами:</dt>
         <dd><pre><code>&lt;?php
         $minVal = 0;
         $maxVal = 0;
@@ -221,7 +222,7 @@
                 }
             }?&gt;
                 </code></pre></dd>
-        <dd>С прошлых заданий у нас остались массивы $array и @array2. Создадим еще один и выведем все:</dd>
+        <dd>С прошлых заданий у нас остались массивы $array и $array2. Создадим еще один и выведем все:</dd>
         <dd><pre><code>
                     print_r($array);
                     print_r([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -275,7 +276,7 @@
                     echo 'Электронная почта введена верно';
                 else echo 'Вы допустили ошибку при вводе'
             ?></pre></dd>
-    <dt>Попробуем определить и вывести домен почты. Для этого создадим переменную mail2:</dt>
+    <dt>Попробуем определить и вывести домен почты. Для этого создадим переменную $mail2:</dt>
         <dd><pre><code>&lt;?php
             $mail2='timofey.smolin@urfu.me';
             ?&gt;</code></pre></dd>
@@ -319,7 +320,7 @@
                 echo implode(",", $straray);
             ?></pre></dd>
         <dd>Второй способ через цикл <i class="functionName">for</i>. Скорее всего он предпочтительней,
-            т.к не использует стандартную фцнкцию:</dd>
+            т.к не использует стандартную функцию:</dd>
         <dd><pre><code>&lt;?php
         for ($key = 0; $key < count($straray); $key++)
             echo $straray[$key], ',';
@@ -395,7 +396,8 @@
         <dd>Получим <a href="johny.txt" download>(Скачать созданный файл)</a>:<pre><?php
                 print_r(fromFile('johny.txt'));
             ?></pre></dd>
-    <dt>Решение последней задачи. Файл <i>elections.txt</i> можно найти в папке сайта. Сначала прочитаем файл и выведем результат подсчета голосов:</dt>
+    <h3>Финальная задача</h3>
+    <dt>Решение последней задачи. Файл <a href="elections.txt" download>elections.txt</a> лежит в папке сайта еще до запуска. Сначала прочитаем файл и выведем результат подсчета голосов:</dt>
         <dd><pre><code>&lt;?php
             $myFile = "elections.txt";
                 $lines = file($myFile);
@@ -429,35 +431,31 @@
             ?></pre></dd>
         <dd>Теперь нужно перевести результат в проценты и сохранить в файл <i>rElections.txt</i>. Округлим до сотых.</dd>
         <dd><pre><code>&lt;?php
-            $rElections = fopen("rElections.txt", "w+");
-            $rElectionsGet='';
-            for ($i = 1; $i <= count($result); $i++){
-                $rElectionsGet.='кандидат '.$i.' набрал '.round(($result[$i]/$m*100), 2).'%,';
-            }
-
-            echo $rElectionsGet;
-            fwrite($rElections, $rElectionsGet);
-            fclose($rElections);
+                $rElections = fopen("rElections.txt", "wb");
+                $rElectionsGet = '';
+                for ($i = 1; $i <= count($result); $i++) {
+                    $rElectionsGet .= 'кандидат ' . $i . ' набрал ' . round(($result[$i] / $m * 100), 2) . '%, ';
+                    $rElectionsGet.=PHP_EOL;
+                }
+                echo $rElectionsGet;
+                //file_put_contents($rElections, $rElectionsGet, FILE_APPEND | LOCK_EX);
+                fwrite($rElections, $rElectionsGet);
+                fclose($rElections);
                 ?&gt;</code></pre></dd>
     <dd>В файле <a href="rElections.txt" download>rElections.txt</a> будет записано:</dd>
         <dd><pre><?php
                 $rElections = fopen("rElections.txt", "wb");
                 $rElectionsGet = '';
                 for ($i = 1; $i <= count($result); $i++) {
-                    $rElectionsGet .= 'кандидат ' . $i . ' набрал ' . round(($result[$i] / $m * 100), 2) . '%, ';
-                    $rElectionsGet.='\n ';
+                    $rElectionsGet .= 'кандидат ' . $i . ' набрал ' . round(($result[$i] / $m * 100), 2) . '%';
+                    $rElectionsGet.=PHP_EOL;
                 }
                 echo $rElectionsGet;
                 //file_put_contents($rElections, $rElectionsGet, FILE_APPEND | LOCK_EX);
                 fwrite($rElections, $rElectionsGet);
                 fclose($rElections);
             ?></pre></dd>
-
-
-
 </dl>
-
-
 </main>
 <footer class="page-footer">
     <div class="container">
