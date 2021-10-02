@@ -1,0 +1,77 @@
+body {
+    padding: 0 100px;
+    font-size: 18px;
+    line-height: 28px;
+    font-family: "Arial", sans-serif;
+    color: #222222;
+
+    background: #ffffff url("img/bg-page.png") no-repeat top center;
+}
+pre,
+code {
+    background-color: #fafaff;
+    border: 1px solid #c6c4f4;
+    border-radius: 4px;
+    color: #3632ad;
+    font-family: "Courier New", "Courier", monospace;
+}
+
+pre {
+    padding: 5px;
+}
+
+code {
+    padding: 2px 5px;
+}
+
+
+pre code {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+.page-title{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    font-family: "Verdana", sans-serif;
+    text-align: center;
+}
+.page-footer {
+    margin-top: auto;
+    color: #ffffff;
+    background-color: #6653d9;
+    border-radius: 4px;
+}
+
+.page-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 14px;
+}
+
+.page-footer p {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 580px;
+    margin: 0 auto;
+}
+.page-header {
+    margin-bottom: 20px;
+    color: #ffffff;
+    background-color: #6653d9;
+    border-radius: 4px;
+}
+.functionName{
+    background-color: darkseagreen;
+    color: #222222;
+    border-radius: 4px;
+}
+.variable{
+    color: greenyellow;
+}
