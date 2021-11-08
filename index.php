@@ -8,11 +8,17 @@
 </head>
 <body class="page">
 <header class="page-header">
+    <ul class="nav">
+        <li><a href="index.php">Лабораторная работа №1</a></li>
+        <li><a href="lab2/lab2.php">Лабораторная работа №2</a></li>
+        <li><a href="#">Лабораторная работа №3</a></li>
+        <li><a href="#">Лабораторная работа №4</a></li>
+    </ul>
     <p class="page-title">Лабораторная работа №1</p>
 </header>
 <main>
 <dl>
-    <p>Если еще не смотрели текстовую часть отчета, скачать docx-файл можно <a href="Отчет по PHP 1.docx" download>здесь</a> (он лежит в папке с сайтом)</p>
+    <p>Если еще не смотрели текстовую часть отчета, скачать docx-файл можно <a href="lab1/Отчет по PHP 1.docx" download>здесь</a> (он лежит в папке с сайтом)</p>
     <h3>Элементы языка. Типы</h3>
     <dt>Вывод простой строки</dt>
         <dd><code>&lt;?php echo('Hello world!'); ?&gt;</code></dd>
@@ -397,7 +403,7 @@
                 print_r(fromFile('johny.txt'));
             ?></pre></dd>
     <h3>Финальная задача</h3>
-    <dt>Решение последней задачи. Файл <a href="elections.txt" download>elections.txt</a> лежит в папке сайта еще до запуска. Сначала прочитаем файл и выведем результат подсчета голосов:</dt>
+    <dt>Решение последней задачи. Файл <a href="lab1/elections.txt" download>elections.txt</a> лежит в папке сайта еще до запуска. Сначала прочитаем файл и выведем результат подсчета голосов:</dt>
         <dd><pre><code>&lt;?php
             $myFile = "elections.txt";
                 $lines = file($myFile);

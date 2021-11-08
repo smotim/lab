@@ -61,7 +61,7 @@ pre code {
     width: 580px;
     margin: 0 auto;
 }
-.page-header {
+.page-title {
     margin-bottom: 20px;
     color: #ffffff;
     background-color: #6653d9;
@@ -74,4 +74,26 @@ pre code {
 }
 .variable{
     color: greenyellow;
+}
+ul.nav{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+.nav li {
+    display: inline;
+}
+ul.nav a {
+    display: inline-block;
+    width: 5em;
+    padding:5em;
+    background-color: #f4f4f4;
+    border: 1px dashed #333;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+}
+ul.nav a:hover{
+    background-color: #333;
+    color: #f4f4f4;
 }
