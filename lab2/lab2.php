@@ -101,7 +101,9 @@ FROM log_taking INNER JOIN books ON log_taking.book_id = books.id
                     }
                     ?></pre></i></dd>
         <h3>Работа с базой данных через PDO</h3>
+        <?php require('add.php') ?>
         <h3>Работа с пользовательским параметром</h3>
+        <?php require('delete.php') ?>
         <h3>Задание со звездочкой</h3>
     </dl>
 </main>
