@@ -5,11 +5,7 @@
                 $status = $link->getAttribute(PDO::ATTR_CONNECTION_STATUS);
                 print($status);
                 ?&gt;</code></pre></dd>
-    <dd>Если бы подключение было неудачным, вывелось бы null:<i><pre><?php
-                $link= new PDO('mysql:host=localhost;dbname=lab;charset=utf8', 'lab2', 'Eee123!!!');
-                $status = $link->getAttribute(PDO::ATTR_CONNECTION_STATUS);
-                print($status);
-                ?></pre></i></dd>
+    <dd>Если бы подключение было неудачным, вывелось бы null:<pre><?php require('mysqli_connection.php') ?></pre></dd>
     <dt>Запрос на добавление:</dt>
     <dd><pre><code>&lt;?php
         $ins_log_taking=$link->prepare('insert into log_taking(reader_id, book_id, taken_at, returned_at)
@@ -38,7 +34,7 @@
         }
         echo 'id добавленной строки ',$link->lastInsertId();
         ?&gt;</code></pre></dd>
-    <dd>Выведет(пока делал лабу часто обновлял страницу, а id каждый раз увеличивается на 1. в этоге на момент написания этого текста id-шник уже больше 40):<i><pre><?php
+    <dd>Выведет(пока делал лабу часто обновлял страницу, а id каждый раз увеличивается на 1. в этоге на момент написания этого текста id-шник уже больше 40):<pre><?php
                 $ins_log_taking=$link->prepare('insert into log_taking(reader_id, book_id, taken_at, returned_at)
 values(:reader_id, :book_id, :taken_at, :returned_at)');
                 $readers_ids=$link->query('select id from readers')->fetchAll(PDO::FETCH_COLUMN);
@@ -64,6 +60,6 @@ values(:reader_id, :book_id, :taken_at, :returned_at)');
                     echo $err->getMessage();
                 }
                 echo 'id добавленной строки ', $link->lastInsertId();
-                ?></pre></i></dd>
+                ?></pre></dd>
 
 </dl>

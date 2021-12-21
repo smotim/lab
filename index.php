@@ -464,9 +464,6 @@
 </dl>
 </main>
 <footer class="page-footer">
-    <div class="container">
-        <p>© Смолин Тимофей</p>
-        <p>02.10.2021</p>
-    </div>
+<?php require('components/footer.php') ?>
 </footer>
 </body>
